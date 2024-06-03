@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Correlophus ciliatus",
+        "image": "static/gallery/1.jpg",
+        "description": "Gecko Arborícola",
+        "Location":"New Caledonia",
+        "Habits": "Night",
+        "Terrarium": "Tall",
+        "Landscape": "Tropical"
+    },
+    {
+        "name": "Rhacodactylus auriculatus",
+        "image": "static/gallery/2.jpg",
+        "description": "Gecko Arborícola",
+        "Location":"New Caledonia",
+        "Habits": "Night",
+        "Terrarium": "Tall",
+        "Landscape": "Tropical"
+    }
+]
