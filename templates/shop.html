@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Mi Tienda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='shop.css') }}">
+</head>
+<body>
+    {% include 'nav.html' %}
+
+    <div class="shop-title">
+        <h1>¡Bienvenido a Nuestra Tienda!</h1>
+        <p>Explora nuestra increíble selección de productos.</p>
+    </div>
+
+    <div class="products">
+        {% for producto in productos %}
+            <div class="product">
+                <h2>{{ producto.name }}</h2>
+                <p>{{ producto.description }}</p>
+                <p>Precio: ${{ producto.price }}</p>
+                <p>Etiqueta: {{ producto.tag }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

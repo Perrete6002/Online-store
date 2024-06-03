@@ -1,0 +1,17 @@
+<nav class="navbar">
+    <div class="container">
+        <a href="{{ url_for('home') }}" class="navbar-brand">ReptileWorld</a>
+        <ul class="navbar-nav">
+            <li><a href="{{ url_for('home_redirect') }}">Home</a></li>
+            <li><a href="{{ url_for('home_redirect') }}#about-us">About</a></li>
+            <li><a href="{{ url_for('home_redirect') }}#contact">Contact</a></li>
+            <li><a href="{{ url_for('gallery') }}">Galery</a></li>
+            <li><a href="{{ url_for('shop') }}">Shop</a></li>
+            {% if logged_in %}
+                <li><a href="{{ url_for('user') }}" class="btn">User</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login_register') }}" class="btn">Login/Register</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

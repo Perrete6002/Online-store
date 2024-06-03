@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - ReptileWorld</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='gallery.css') }}">
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="gallery-container" data-json-url="{{ url_for('static', filename='gallery/gallery.json') }}">
+        <h1 class="gallery-title">Galería</h1>
+        <div class="gallery" id="gallery"></div>
+    </div>
+    <script src="{{ url_for('static', filename='gallery.js') }}"></script>
+    {% include 'footer.html' %}
+</body>
+</html>

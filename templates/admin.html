@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - ReptileWorld</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <script>
+        function handleModify(id) {
+            window.location.href = '/modify/' + id;
+        }
+
+        function handleDelete(id) {
+            fetch('/delete/' + id, {
+                method: 'POST',
+            }).then(response => {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert('Error deleting product');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Add or Modify Product</h1>
+    <form action="/admin" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required></textarea><br>
+        <label for="price">Price:</label><br>
+        <input type="number" step="0.01" id="price" name="price" required><br>
+        <label for="tag">Tag:</label><br>
+        <input type="text" id="tag" name="tag" required><br>
+        <label for="id">ID:</label><br>
+        <input type="text" id="id" name="id" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h1>Modify Existing Products</h1>
+    <ul class="product-list">
+        {% for product in products %}
+            <li class="product-list-item">
+                {{ product.name }} 
+                <div class="button-container">
+                    <button class="modify-button" onclick="handleModify('{{ product.ID }}')">Modify</button>
+                    <button class="delete-button" onclick="handleDelete('{{ product.ID }}')">Delete</button>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

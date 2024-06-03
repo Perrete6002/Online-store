@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery View - ReptileWorld</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='gallery_view.css') }}">
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="gallery-view-container">
+        <h1 id="item-name"></h1>
+        <img id="item-image" src="" alt="">
+        <div class="item-details">
+            <p id="item-description"></p>
+            <p><strong>Location:</strong> <span id="item-location"></span></p>
+            <p><strong>Habits:</strong> <span id="item-habits"></span></p>
+            <p><strong>Terrarium Type:</strong> <span id="item-terrarium-type"></span></p>
+            <p><strong>Landscape:</strong> <span id="item-landscape"></span></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const item = JSON.parse(localStorage.getItem('selectedItem'));
+            if (item) {
+                document.getElementById('item-name').textContent = item.name;
+                document.getElementById('item-image').src = item.image;
+                document.getElementById('item-description').textContent = item.description;
+                document.getElementById('item-location').textContent = item.Location;
+                document.getElementById('item-habits').textContent = item.Habits;
+                document.getElementById('item-terrarium-type').textContent = item.Terrarium;
+                document.getElementById('item-landscape').textContent = item.Landscape; 
+            }
+        });
+    </script>
+    
+</html>

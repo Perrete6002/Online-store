@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>ReptileWorld</title>
+</head>
+<body>
+    {% include 'nav.html' %} 
+    
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="{{ url_for('static', filename='video_bg.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content">
+        <h1 class="brand">ReptileWorld</h1>
+        <div class="panel about-us" id="about-us">
+            <h2>About Us</h2>
+            <p>ReptileWorld es el resultado de la pasión compartida por los reptiles de un grupo de entusiastas. Nuestra historia comienza en un pequeño rincón donde la curiosidad por estos fascinantes animales nos llevó a explorar y aprender más sobre ellos.</p>
+            
+            <p>Lo que comenzó como una colección modesta de reptiles se transformó rápidamente en una comunidad dedicada a compartir conocimientos, experiencias y cuidados. Nos esforzamos por ofrecer un lugar donde los amantes de los reptiles de todos los niveles de experiencia puedan conectarse, aprender y crecer juntos.</p>
+            
+            <p>Nuestro compromiso con la excelencia se refleja en cada aspecto de nuestro sitio. Desde guías detalladas sobre cuidado y manejo hasta artículos informativos sobre las especies más diversas, nuestro objetivo es proporcionar recursos confiables y útiles que inspiren a la comunidad de reptiles.</p>
+            
+            <p>En ReptileWorld, creemos que la educación es la clave para una relación armoniosa entre los humanos y los reptiles. Es por eso que nos esforzamos por ofrecer contenido de calidad que promueva el bienestar y la comprensión de estas fascinantes criaturas.</p>
+        </div>        
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_user.css') }}">
+    <title>User Panel - ReptileWorld</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="user-panel">
+        <h2>User Information</h2>
+        <form action="{{ url_for('user') }}" method="post">
+            <div class="input-group">
+                <label for="new_username">Username:</label>
+                <input type="text" name="new_username" id="new_username" value="{{ user[0] }}">
+            </div>
+            <div class="input-group">
+                <label for="new_email">Email:</label>
+                <input type="email" name="new_email" id="new_email" value="{{ user[1] }}">
+            </div>
+            <div class="input-group">
+                <label for="new_password">Password:</label>
+                <input type="password" name="new_password" id="new_password" value="{{user[2] }}">
+            </div>
+            <button type="submit" class="btn_">Apply Changes</button>
+        </form>
+        <form action="{{ url_for('logout') }}" method="post">
+            <button type="submit" class="btn_">Logout</button>
+        </form>
+    </div>
+</body>
+</html>
