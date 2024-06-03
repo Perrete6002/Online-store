@@ -1,0 +1,25 @@
+footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Asegura que el footer se pueda posicionar */
+    z-index: 1; /* Ajusta el z-index para que esté por encima del video */
+}
+
+.contact-panel {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-panel h3 {
+    color: #333;
+}
+
+.contact-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-panel ul li {
+    margin-bottom: 10px;
+}
